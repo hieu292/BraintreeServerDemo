@@ -9,7 +9,7 @@ import routes from './routes'
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = parseInt(process.env.PORT, 10) || 8000
-const ROOT_URL = dev ? `http://localhost:${port}` : 'https://PRODUCTION_URL'
+const ROOT_URL = dev ? `http://localhost:${port}` : process.env.PRODUCTION_URL
 
 const app = next({ dev })
 const handle = app.getRequestHandler()
