@@ -6,7 +6,7 @@ import helmet from 'helmet'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import routes from './routes'
-import {dev, port, ROOT_URL} from "../config";
+import {dev, port, ROOT_URL} from "./config";
 
 
 const app = next({ dev })

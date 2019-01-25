@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import { BraintreeDropIn } from 'braintree-web-react'
-import {ROOT_URL} from "../config";
+import {ROOT_URL} from "../server/config";
 import './index.css'
 
 class Index extends Component {
