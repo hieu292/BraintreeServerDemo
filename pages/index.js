@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import { BraintreeDropIn } from 'braintree-web-react'
-
+import {ROOT_URL} from "../config";
 import './index.css'
 
 class Index extends Component {
@@ -15,7 +15,7 @@ class Index extends Component {
   async componentDidMount() {
     try {
       // Get a client token for authorization from your server
-      const response = await axios.get('http://localhost:8000/api/braintree/v1/getToken')
+      const response = await axios.get(`${ROOT_URL}/api/braintree/v1/getToken`)
       const { clientToken } = response.data;
 
       this.setState({ clientToken })
@@ -30,7 +30,7 @@ class Index extends Component {
       const { nonce } = await this.instance.requestPaymentMethod()
 
       const response = await axios.post(
-        'http://localhost:8000/api/braintree/v1/sandbox',
+        `${ROOT_URL}/api/braintree/v1/sandbox`,
         { nonce },
       )
 

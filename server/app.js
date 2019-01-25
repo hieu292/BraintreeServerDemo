@@ -6,10 +6,8 @@ import helmet from 'helmet'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import routes from './routes'
+import {dev, port, ROOT_URL} from "../config";
 
-const dev = process.env.NODE_ENV !== 'production'
-const port = parseInt(process.env.PORT, 10) || 8000
-const ROOT_URL = dev ? `http://localhost:${port}` : process.env.PRODUCTION_URL
 
 const app = next({ dev })
 const handle = app.getRequestHandler()
